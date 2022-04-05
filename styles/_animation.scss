@@ -1,0 +1,11 @@
+@keyframes penguin-pop {
+    from {
+        transform: translate(-50%, -1em);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(-50%, -2em);
+        opacity: 1;
+    }
+}

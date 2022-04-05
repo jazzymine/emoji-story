@@ -1,0 +1,83 @@
+@use './animation';
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F2DFC8;
+    display: grid;
+}
+
+.emoji {
+    font-size: 2em;
+}
+
+.es {
+    padding: 3rem;
+    font-family: le-monde-livre-std, serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+    &__input-section {
+        background-color: #FFF3E6;
+    }
+    &__selected {
+        min-height: 3em;
+        position: relative;
+        padding: 1em;
+        &__item {
+            padding: .1em;
+            line-height: 1.5em;
+        }
+        &__clear-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1em;
+        }
+    }
+    &__options {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(4em, 1fr));
+        justify-items: center;
+        padding: 1em;
+    }
+    &__loading-bar {
+        background-color: #29292948;
+        .MuiLinearProgress-bar {
+            background-color: #937474;
+        }
+    }
+    &__story {
+        padding: 2em;
+        line-height: 1.5em;
+        font-weight: 100;
+        color: #310f0f;
+        opacity: 1;
+        transition: opacity .5s;
+        &--hide {
+            opacity: 0;
+        }
+    }
+    .play-btn-container {
+        .penguin-container {
+            width: 3em;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -2em);
+            animation: penguin-pop 1s;
+        }
+        .play-btn {
+            width: 8rem;
+            margin: 0 auto;
+        }
+    }
+    .MuiPaper-root {
+        border-radius: 1em;
+    }
+}
